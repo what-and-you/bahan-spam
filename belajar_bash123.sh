@@ -112,13 +112,8 @@ while true; do
       5) 
         spam_menu
         ;;
-    6) 
-     teks="selamat tinggal $nama 👋 "
-     interval=0.05
-  for (( i=0; i<${#text}; i++ )); do
-    echo -n "${text:$i:1}"
-    sleep $interval
-    done
+    6)
+      echo "keluar... "
       break
       ;;
      *)
