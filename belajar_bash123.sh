@@ -3,10 +3,14 @@ echo "
           |=================================================|
           |1.MENU SPAM                                      |
           |2.MENU SPAM                                      |
+          |3.EXIT                                           |
           |=================================================|
 "
+echo
+       echo
+       echo -n    "Pilih menu: " kontol
 }
-function show_menu1 {
+function spam_menu1 {
 sleep 1.5
 clear
 apt update && apt upgrade
@@ -18,7 +22,7 @@ pip3 insttill -r install.txt
 python3 brutal.py
 }
 
-function show_menu2 {
+function spam_menu2 {
 sleep 1.5
 clear
 apt update && apt upgrade
@@ -32,3 +36,24 @@ git pull
 make install
 ./main
 }
+
+while true; do
+  show_menu
+  read kontol
+  case $kontol in
+    1)
+      spam_menu1
+      ;;
+    2) 
+      spam_menu2
+      ;;
+    3) 
+     echo "Keluar..."
+      break
+      ;;
+     *)
+       echo "Pilihan tidak valid, coba lagi."
+       sleep 1
+       ;;
+   esac
+ done
