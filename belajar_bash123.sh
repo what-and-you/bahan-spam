@@ -1,4 +1,6 @@
 function show_menu {
+clear
+sleep 1
 echo "
           |=================================================|
           |1.MENU SPAM                                      |
@@ -8,7 +10,7 @@ echo "
 "
 echo
        echo
-       echo -n    "Pilih menu: " kontol
+       echo -n    "Pilih menu: " 
 }
 function spam_menu1 {
 sleep 1.5
@@ -39,6 +41,7 @@ make install
 
 while true; do
   show_menu
+  read kontol
   case $kontol in
     1)
       spam_menu1
