@@ -1,11 +1,19 @@
+
+
+
+login_file=".login_user"
+
 function show_menu {
 clear
 sleep 1
 echo "
           |=================================================|
-          |1.MENU SPAM                                      |
-          |2.MENU SPAM                                      |
-          |3.EXIT                                           |
+          |1.MENU SPAMv1                                    |
+          |2.MENU SPAMv2                                    |
+          |3.MENU SPAMv3                                    |
+          |4.MENU SPAMv4                                    |
+          |5.MENU SPAMv5                                    |
+          |6.EXIT                                           |
           |=================================================|
 "
 echo
@@ -39,6 +47,52 @@ make install
 ./main
 }
 
+function spam_menu3 {
+clear
+sleep 1.5
+apt update -y && apt upgrade -y
+apt install git -y
+apt install python -y
+git clone https://github.com/FatihArridho/brutal.git
+cd brutal
+pip install -r install.txt
+python brutal.py
+}
+
+function spam_menu4 {
+clear
+sleep 1.5
+apt update && apt upgrade
+apt install python2
+apt install php
+apt install git
+git clone https://github.com/joss24242/SpamSms.git
+cd SpamSms
+python2 mantan.py
+}
+
+function spam_menu5 {
+apt update && apt upgrade
+apt install python2
+apt install php
+apt install git
+git clone https://github.com/joss24242/SpamSms.git
+cd SpamSms
+python2 mantan.py
+}
+
+if [ -f "$login_file" ]; then
+  name=$(cat "$login_file")
+  echo "Selamat datang kembali, $name!"
+sleep 2
+else
+  echo "masukan nama baru buat tampilan spam menu: "
+  read name
+  echo "$name" > "$login_file"
+  echo "Selamat datang, $name!"
+sleep 2
+fi
+
 while true; do
   show_menu
   read kontol
@@ -50,6 +104,15 @@ while true; do
       spam_menu2
       ;;
     3) 
+       spam_menu3
+       ;;
+     4) 
+       spam_menu
+       ;;
+      5) 
+        spam_menu
+        ;;
+    6) 
      echo "Keluar..."
       break
       ;;
