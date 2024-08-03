@@ -118,6 +118,7 @@ while true; do
   for (( i=0; i<${#text}; i++ )); do
     echo -n "${text:$i:1}"
     sleep $interval
+    done
       break
       ;;
      *)
