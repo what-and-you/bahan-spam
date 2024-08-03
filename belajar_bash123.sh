@@ -13,7 +13,8 @@ echo "
           |3.MENU SPAMv3                                    |
           |4.MENU SPAMv4                                    |
           |5.MENU SPAMv5                                    |
-          |6.EXIT                                           |
+          |6.GANTI USER NAME                                |
+          |7.EXIT                                           |
           |=================================================|
 "
 echo
@@ -81,6 +82,18 @@ cd SpamSms
 python2 mantan.py
 }
 
+function ganti_user_name{
+  clear
+  echo "Masukkan nama baru: "
+  read new_name
+  name=$new_name
+  echo "$name" > "$login_file"
+  echo "Nama telah diubah menjadi $name "
+sleep 1.5
+  echo "Tekan enter untuk kembali ke menu utama"
+  read
+}
+
 if [ -f "$login_file" ]; then
   name=$(cat "$login_file")
   echo "Selamat datang kembali, $name!"
@@ -102,23 +115,26 @@ while true; do
   case $kontol in
     1)
       spam_menu1
-      ;;
+       ;;
     2) 
       spam_menu2
-      ;;
+       ;;
     3) 
        spam_menu3
        ;;
      4) 
        spam_menu
        ;;
-      5) 
+     5) 
         spam_menu
         ;;
-    6)
-      echo "keluar... "
-      break
-      ;;
+     6) 
+        ganti_user_name
+        ;;
+    7)
+        echo "keluar... "
+        break
+        ;;
      *)
        echo "Pilihan tidak valid, coba lagi."
        sleep 1
