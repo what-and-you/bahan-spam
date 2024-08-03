@@ -39,7 +39,6 @@ make install
 
 while true; do
   show_menu
-  read kontol
   case $kontol in
     1)
       spam_menu1
